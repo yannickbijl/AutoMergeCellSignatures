@@ -2,7 +2,7 @@
 # Parameters.
 filename_cell_signatures <- "path\\to\\inputfile\\in\\csv"
 filename_out <- "path\\to\\outputfile\\in\\csv"
-max_distance <- 2 # Try to merge cluster if they are less than distance apart
+min_distance <- 2 # Try to merge cluster if they are less than distance apart
 max_marker_difference <- 1 # Merge clusters if 1 or more markers differs than the set value.
 
 # Data read in, and pre-processing.
@@ -19,7 +19,7 @@ if (ncol(cell_signatures) == 1) {
 }
 
 # Main loop, as long as there are similar pairs.
-while (min(signature_distances$distance) < max_distance) {
+while (min(signature_distances$distance) < min_distance) {
     # Find minimum distance pair
     index <- which(signature_distances$distance == min(signature_distances$distance))
     name_1 <- toString(signature_distances[index[1], "subset1"]) # subset1 column
