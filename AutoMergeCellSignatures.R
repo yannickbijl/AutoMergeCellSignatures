@@ -1,12 +1,12 @@
 
 # Parameters.
-filename_cell_signatures <- "D:\\USERYB\\Downloads\\test.csv"
-filename_out <- "D:\\USERYB\\Downloads\\test_out.csv"
-max_distance <- 2
-max_marker_difference <- 1
+filename_cell_signatures <- "path\\to\\inputfile\\in\\csv"
+filename_out <- "path\\to\\outputfile\\in\\csv"
+max_distance <- 2 # Try to merge cluster if they are less than distance apart
+max_marker_difference <- 1 # Merge clusters if 1 or more markers differs than the set value.
 
 # Data read in, and pre-processing.
-cell_signatures <- read.csv(filename_cell_signatures, row.names=1, sep=";")
+cell_signatures <- read.csv(filename_cell_signatures, row.names=1, sep="")
 
 # Initial distance matrix.
 if (ncol(cell_signatures) == 1) {
