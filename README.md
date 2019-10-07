@@ -15,10 +15,9 @@ The `min_distance` parameter is the minimal distance between cell types to be co
 
 This is where the other parameter `max_marker_difference` comes into. This parameter is the minimal amount of difference a single marker in the cell signature must have to be considered unique. Thus a cell signatures can be considered unique when it has a minimum distance to all other cell signatures or at least a single marker is differential enough.
 
-When cell signatures are not unique, and thus too similar, they are merged by taking the mean of the cell signatures. Cell type names are chained together for identification of the signatures.
+The script uses an iterative design similar to hierarchical clustering. The workflow can be seen below. The input being a set of signatures, a distance matrix is calculated using Euclidean distance. The pair of signatures with the lowest distance is taken and further inspected. The inspection ensures that none of the markers are too different, ensuring true similarity between the cell signatures.
 
-## Results
-Text
+When cell signatures are similar, they are combined into a single cell signature. In the case that cell signatures are merged, a new distance matrix will be calculated. When cell signatures cannot be merged, the next pair is inspected. This continues till all cell signatures are deemed unique or are merged into a single cell signature. The output being the merged cell signatures.
 
 ## Discussion
 Text
