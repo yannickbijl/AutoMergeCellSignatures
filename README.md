@@ -13,7 +13,7 @@ The script has four parameters. Two are the in- and output files. The other two 
 
 The `min_distance` parameter is the minimal distance between cell types to be considered unique. All cell types that are far enough to all other cell types are considered to be having unique cell signatures. Every pair of cell types with a lower distance is considered to be highly similar. However, this does not indicate that the cell signatures are not unique. An additional test is needed for determining the uniqueness in those cases.
 
-This is where the other parameter `max_marker_difference` comes into. This paramter is the minimal amount of difference a single marker in the cell signature must have to be considered unique.
+This is where the other parameter `max_marker_difference` comes into. This parameter is the minimal amount of difference a single marker in the cell signature must have to be considered unique. Thus a cell signatures can be considered unique when it has a minimum distance to all other cell signatures or at least a single marker is differential enough.
 
 ## Results
 Text
