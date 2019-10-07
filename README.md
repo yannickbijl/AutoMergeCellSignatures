@@ -20,4 +20,11 @@ The script uses an iterative design similar to hierarchical clustering. The work
 When cell signatures are similar, they are combined into a single cell signature. In the case that cell signatures are merged, a new distance matrix will be calculated. When cell signatures cannot be merged, the next pair is inspected. This continues till all cell signatures are deemed unique or are merged into a single cell signature. The output being the merged cell signatures.
 
 ## Discussion
-Text
+Though this workflow works, it does have its shortcomings. Foremost is that the quality of the cell signatures, and their uniqueness, depends on the user-set parameters `min_distance` and `max_marker_difference`. This can lead to inconsistencies within research groups when "uniqueness" is not well-defined. The same argument goes for whole research communities even more.
+
+Another issue is the ease of use. I decided to make the script as simple as possible to allow incorporation of the code in any workflow. Therefore I did not write any code pertaining visualization of the cell signatures. However, this should be fairly easy to implement if needed.
+
+This R script can be an useful supplement to an overall workflow, when working with cell type signatures. Especially once the shortcomings are addressed internally. AutoMergeCellSignatures is independent of platform, cell type, and markers. This makes it suitable for any workflow regarding cell signatures.
+
+## Personal Note
+I hope that this script can help people in their work and research. Please feel free to use this code, and ask questions to me.
