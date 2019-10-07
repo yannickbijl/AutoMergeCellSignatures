@@ -15,6 +15,8 @@ The `min_distance` parameter is the minimal distance between cell types to be co
 
 This is where the other parameter `max_marker_difference` comes into. This parameter is the minimal amount of difference a single marker in the cell signature must have to be considered unique. Thus a cell signatures can be considered unique when it has a minimum distance to all other cell signatures or at least a single marker is differential enough.
 
+When cell signatures are not unique, and thus too similar, they are merged by taking the mean of the cell signatures. Cell type names are chained together for identification of the signatures.
+
 ## Results
 Text
 
