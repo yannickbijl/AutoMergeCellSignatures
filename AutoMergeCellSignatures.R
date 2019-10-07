@@ -1,7 +1,7 @@
 
 # Parameters.
-filename_cell_signatures <- "path\\to\\inputfile\\in\\csv"
-filename_out <- "path\\to\\outputfile\\in\\csv"
+filename_cell_signatures <- "path/to/inputfile/in/csv"
+filename_out <- "path/to/outputfile/in/csv"
 min_distance <- 2 # Try to merge cluster if they are less than distance apart
 max_marker_difference <- 1 # Merge clusters if 1 or more markers differs than the set value.
 
@@ -10,7 +10,7 @@ cell_signatures <- read.csv(filename_cell_signatures, row.names=1, sep="")
 
 # Initial distance matrix.
 if (ncol(cell_signatures) == 1) {
-    write.csv(cell_signatures, file=filename_out)
+    write.csv(cell_signatures, file=filename_out) # save file
     quit()
 } else {
     distance_matrix <- abs(dist(t(cell_signatures)))
@@ -37,7 +37,7 @@ while (min(signature_distances$distance) < min_distance) {
         cell_signatures <- as.data.frame(cell_signatures)
         # Make new distance matrix, if needed.
         if (ncol(cell_signatures) == 1) {
-            write.csv(cell_signatures, file=filename_out)
+            write.csv(cell_signatures, file=filename_out) # save file
             quit()
         } else {
             distance_matrix <- abs(dist(t(cell_signatures)))
@@ -49,5 +49,5 @@ while (min(signature_distances$distance) < min_distance) {
         signature_distances[index,3] <- Inf # distance column
     }
 }
-write.csv(cell_signatures, file=filename_out)
+write.csv(cell_signatures, file=filename_out) # save file
 quit()
