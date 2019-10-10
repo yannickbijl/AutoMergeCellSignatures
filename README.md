@@ -19,6 +19,8 @@ The script uses an iterative design similar to hierarchical clustering. The work
 
 When cell signatures are similar, they are combined into a single cell signature. In the case that cell signatures are merged, a new distance matrix will be calculated. When cell signatures cannot be merged, the next pair is inspected. This continues till all cell signatures are deemed unique or are merged into a single cell signature. The output being the merged cell signatures.
 
+![alt text](images/AutoMergeSignatureMarkers.jpg "Workflow")
+
 ## Discussion
 Though this workflow works, it does have its shortcomings. Foremost is that the quality of the cell signatures, and their uniqueness, depends on the user-set parameters `min_distance` and `max_marker_difference`. This can lead to inconsistencies within research groups when "uniqueness" is not well-defined. The same argument goes for whole research communities even more.
 
