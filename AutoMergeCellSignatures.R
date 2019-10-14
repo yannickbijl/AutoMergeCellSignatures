@@ -29,7 +29,7 @@ while (min(signature_distances$distance) < min_distance) {
 
     # Check if any
     marker_difference = abs(subset_1 - subset_2)
-    if (any(marker_difference < max_marker_difference)) {
+    if (all(marker_difference < max_marker_difference)) {
         # Merge pair into one.
         new_cell_signature<- paste(name_1, name_2, sep="_")
         cell_signatures[[new_cell_signature]] <- rowMeans(cell_signatures[,c(name_1, name_2)])
